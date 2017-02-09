@@ -47,7 +47,7 @@ class TwitterHelper
     {
 
         try {
-            $content = $this->twitterClient->get("seasrch/tweets", ["q" => $query, 'result_type' => 'popular', 'count' => $count, 'since_id' => $sinceId]);
+            $content = $this->twitterClient->get("search/tweets", ["q" => $query, 'result_type' => 'popular', 'count' => $count, 'since_id' => $sinceId]);
             if ($this->twitterClient->getLastHttpCode() != 200) {
                 $this->setError('Something seems to be gone wrong!');
                 return false;
