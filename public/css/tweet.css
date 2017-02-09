@@ -1,0 +1,13 @@
+@import "bootstrap.min.css";
+
+.row-eq-height {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row wrap;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+}

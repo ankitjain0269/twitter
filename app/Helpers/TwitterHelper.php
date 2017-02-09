@@ -24,6 +24,8 @@ class TwitterHelper
     private $error = null;
 
     /**
+     * Setting twitter client.
+     *
      * Twitter constructor.
      */
     public function __construct()
@@ -32,6 +34,8 @@ class TwitterHelper
     }
 
     /**
+     * Fetch tweets by hitting Twitter API on the basis
+     *
      * @param $query
      * @param int $count
      * @param null $sinceId
@@ -43,7 +47,7 @@ class TwitterHelper
     {
 
         try {
-            $content = $this->twitterClient->get("search/tweets", ["q" => $query, 'result_type' => 'popular', 'count' => $count, 'since_id' => $sinceId]);
+            $content = $this->twitterClient->get("seasrch/tweets", ["q" => $query, 'result_type' => 'popular', 'count' => $count, 'since_id' => $sinceId]);
             if ($this->twitterClient->getLastHttpCode() != 200) {
                 $this->setError('Something seems to be gone wrong!');
                 return false;
@@ -57,6 +61,8 @@ class TwitterHelper
     }
 
     /**
+     * Map Twitter data
+     *
      * @param $tweet
      *
      * @return array
@@ -67,12 +73,14 @@ class TwitterHelper
         return [
             'id' => $tweet->id,
             'text' => $tweet->text,
-            'user_name' => $tweet->user->screen_name,
+            'twitter_handle' => $tweet->user->screen_name,
             'retweet_count' => $tweet->retweet_count
         ];
     }
 
     /**
+     * Remove Tweet having retweet count less then zero.
+     *
      * @param array $tweets
      *
      * @return array
@@ -86,6 +94,8 @@ class TwitterHelper
     }
 
     /**
+     * Check for error.
+     *
      * @return bool
      * @author Ankit
      */

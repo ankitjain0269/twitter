@@ -1,4 +1,5 @@
 <?php
 
 
-$app->get('/', 'TwitterController@getTweets');
+$app->get('/', 'TwitterController@index');
+$app->get('get-tweets', 'TwitterController@getTweets');
