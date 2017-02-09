@@ -1,4 +1,4 @@
-Fetch tweets which are retweeted with keywords.
+Fetch tweets which are retweeted on the basis of keywords.
 
 ##setup
 * Clone Project
