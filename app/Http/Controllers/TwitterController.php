@@ -37,7 +37,7 @@ class TwitterController extends Controller
      */
     public function getTweets(Request $request, TwitterHelper $twitterHelper)
     {
-        $tweets = $twitterHelper->fetchTweets('#custserv', $request->get('count', 10), $request->since_id);
+        $tweets = $twitterHelper->fetchTweets($request->get('keyword', '#custserv'), $request->get('count', 10), $request->since_id);
         if ($twitterHelper->hasError())
             return response(['error' => $twitterHelper->getError()], 422);
 

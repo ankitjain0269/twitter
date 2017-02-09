@@ -1,4 +1,4 @@
-Fetch tweets which are retweeted with hashtag #custserv.
+Fetch tweets which are retweeted with keywords.
 
 Clone Project
 Run composer update
